@@ -1,0 +1,655 @@
+/****************************************/
+/* CONTENT */
+/*1 GENERAL */
+/*2. HEADER */
+/*3. MAIN */
+/*3a. SKY */
+/*3b. OCEAN */
+/*4. FOOTER */
+/*5.  MEDIA QUERY */
+/****************************************/
+/* MIXINS */
+/* DESKTOP */
+/* GENERAL */
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #392033;
+  font-family: 'Inconsolata', monospace;
+  color: #ffc1a0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.page-wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  position: relative;
+}
+.hidden {
+  position: absolute;
+  left: -10000px;
+}
+a {
+  text-decoration: none;
+  color: #ffc1a0;
+}
+a:hover {
+  color: #ffe577;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  display: inline-block;
+  list-style: none;
+}
+/* HEADER */
+.main-nav ul {
+  position: absolute;
+  right: 0;
+}
+.main-nav li {
+  border-right: 1px solid #ffc1a0;
+  padding: 0.5em 1em;
+  margin-top: 0.5em;
+  font-size: 1.2em;
+  font-family: 'Merriweather', serif;
+}
+.main-nav li:last-child {
+  border-right: none;
+}
+#logo {
+  max-width: 15%;
+  padding: 2%;
+  margin-top: 2.5em;
+}
+#header h1 {
+  display: inline-block;
+  font-size: 3em;
+  color: #ffe577;
+  margin-left: 15%;
+  top: -1em;
+  position: relative;
+}
+#header h1 span {
+  color: #cff4f3;
+  font-weight: normal;
+}
+/* MAIN */
+#main .page-wrapper {
+  border: 2px solid #ff8967;
+  overflow: hidden;
+  background-color: #fff;
+}
+/* SKY */
+#sky-wrapper {
+  background: linear-gradient(to bottom, #e2f2ed, #ffffff);
+  width: 100%;
+  height: 0;
+  padding-bottom: 40%;
+  position: relative;
+  -webkit-transition: all 2s fadein;
+  -moz-transition: all 2s fadein;
+  -o-transition: all 2s fadein;
+  transition: all 2s fadein;
+}
+#sun {
+  width: 7%;
+  height: 0;
+  padding-bottom: 7%;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 200px;
+  top: 100px;
+  box-shadow: 0 0 1.5em 1em #fff;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.cloud {
+  position: absolute;
+  top: 2em;
+  width: 17%;
+  height: 0;
+  padding-bottom: 5%;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 0.5em 0.5em #fff;
+  -webkit-animation: cloudmove 25s linear infinite;
+  -moz-animation: cloudmove 25s linear infinite;
+  animation: cloudmove 25s linear infinite;
+}
+@-moz-keyframes cloudmove {
+  50% {
+    transform: translateX(-70%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes cloudmove {
+  50% {
+    transform: translateX(-70%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes cloudmove {
+  50% {
+    transform: translateX(-70%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.cloud:hover {
+  -webkit-animation: cloudwiggle 1s;
+  -moz-animation: cloudwiggle 1s;
+  animation: cloudwiggle 1s;
+}
+@-moz-keyframes cloudwiggle {
+  10%,
+  90% {
+    transform: rotate(5deg);
+  }
+  30%,
+  80% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+@-webkit-keyframes cloudwiggle {
+  10%,
+  90% {
+    transform: rotate(5deg);
+  }
+  30%,
+  80% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes cloudwiggle {
+  10%,
+  90% {
+    transform: rotate(5deg);
+  }
+  30%,
+  80% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+.cloud::before {
+  content: '';
+  position: absolute;
+  left: 12%;
+  top: -16%;
+  width: 30%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 0.5em 0.5em #fff;
+}
+.cloud::after {
+  content: '';
+  position: absolute;
+  left: 30%;
+  top: -40%;
+  width: 55%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 0.5em 0.5em #fff;
+}
+#cloud1 {
+  left: 10%;
+  top: 40%;
+  animation-delay: 15s;
+}
+#cloud2 {
+  left: 55%;
+  top: 10%;
+}
+#cloud3 {
+  left: 85%;
+  top: 65%;
+  animation-delay: 7s;
+}
+/* OCEAN */
+#ocean-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 45%;
+}
+#ocean {
+  position: absolute;
+  margin: 0;
+  width: 800%;
+  padding-bottom: 50%;
+  top: -8%;
+  border-width: 0px;
+  background: url("images/ocean.png");
+  filter: drop-shadow(0 -2px 5px #b9eae4);
+  -webkit-animation: slide 5s linear infinite;
+  -moz-animation: slide 5s linear infinite;
+  animation: slide 5s linear infinite;
+}
+@-moz-keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+/* BOAT */
+#boat-container {
+  width: 17%;
+  height: 0%;
+  padding-bottom: 10%;
+  position: absolute;
+  left: 20%;
+  top: -15%;
+  transform-origin: bottom;
+  -webkit-animation: cloudwiggle 5s infinite, boatmove 10s infinite;
+  -moz-animation: cloudwiggle 5s infinite, boatmove 10s infinite;
+  animation: cloudwiggle 5s infinite, boatmove 10s infinite;
+}
+@-moz-keyframes boatmove {
+  50% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes boatmove {
+  50% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes boatmove {
+  50% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#draft {
+  position: relative;
+  width: 100%;
+  padding-bottom: 10%;
+  background-color: #392033;
+  transform: perspective(2px) rotateX(-1deg);
+  box-shadow: 0 5px 5px 0 grey;
+}
+#draft:hover {
+  -webkit-animation: cloudwiggle 5s;
+  -moz-animation: cloudwiggle 5s;
+  animation: cloudwiggle 5s;
+}
+#column {
+  position: relative;
+  border-left: 3px solid #392033;
+  padding-bottom: 60%;
+  left: 45%;
+}
+#sail1 {
+  position: absolute;
+  left: -7%;
+  width: 50%;
+  padding-bottom: 55%;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+#sail1::before {
+  content: "";
+  position: absolute;
+  width: 170%;
+  height: 100%;
+  left: -70%;
+  background-color: #f16053;
+  transform-origin: top right;
+  -webkit-transform: rotate(-53deg);
+  -moz-transform: rotate(-53deg);
+  -ms-transform: rotate(-53deg);
+  -o-transform: rotate(-53deg);
+}
+#sail1:hover {
+  transform-origin: top right;
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+}
+#sail2 {
+  position: absolute;
+  left: 49%;
+  width: 50%;
+  padding-bottom: 55%;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+#sail2::before {
+  content: "";
+  position: absolute;
+  width: 170%;
+  height: 100%;
+  background-color: #f16053;
+  transform-origin: top left;
+  -webkit-transform: rotate(50deg);
+  -moz-transform: rotate(50deg);
+  -ms-transform: rotate(50deg);
+  -o-transform: rotate(50deg);
+}
+#sail2:hover {
+  transform-origin: top right;
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+}
+/* FISH */
+.fish {
+  position: absolute;
+  width: 2%;
+  height: 0;
+  padding-bottom: 2%;
+  background-color: rgba(57, 32, 51, 0.8);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+.fish div {
+  width: 150%;
+  position: absolute;
+  padding-bottom: 150%;
+  overflow: hidden;
+  left: -75%;
+  top: 25%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+.fish div::before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  top: -25%;
+  left: -55%;
+  transform-origin: 0 100%;
+  background-color: rgba(57, 32, 51, 0.8);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+#fish-wrapper1,
+#fish-wrapper2,
+#fish-wrapper3,
+#fish-wrapper4,
+#fish-wrapper5 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#fish-wrapper1 {
+  -webkit-animation: fishmove 25s linear infinite;
+  -moz-animation: fishmove 25s linear infinite;
+  animation: fishmove 25s linear infinite;
+}
+@-moz-keyframes fishmove {
+  100% {
+    transform: translateX(120%);
+  }
+}
+@-webkit-keyframes fishmove {
+  100% {
+    transform: translateX(120%);
+  }
+}
+@keyframes fishmove {
+  100% {
+    transform: translateX(120%);
+  }
+}
+#fish-wrapper2 {
+  -webkit-animation: fishmove 15s -22s linear infinite;
+  -moz-animation: fishmove 15s -22s linear infinite;
+  animation: fishmove 15s -22s linear infinite;
+}
+#fish-wrapper3 {
+  -webkit-animation: fishmove 20s -12s linear infinite;
+  -moz-animation: fishmove 20s -12s linear infinite;
+  animation: fishmove 20s -12s linear infinite;
+}
+#fish-wrapper4 {
+  -webkit-animation: fishmove1 30s linear infinite;
+  -moz-animation: fishmove1 30s linear infinite;
+  animation: fishmove1 30s linear infinite;
+}
+@-moz-keyframes fishmove1 {
+  100% {
+    transform: translateX(-110%);
+  }
+}
+@-webkit-keyframes fishmove1 {
+  100% {
+    transform: translateX(-110%);
+  }
+}
+@keyframes fishmove1 {
+  100% {
+    transform: translateX(-110%);
+  }
+}
+#fish-wrapper5 {
+  -webkit-animation: fishmove1 20s -5s linear infinite;
+  -moz-animation: fishmove1 20s -5s linear infinite;
+  animation: fishmove1 20s -5s linear infinite;
+}
+.fish:hover {
+  -webkit-animation: fishwiggle 1s;
+  -moz-animation: fishwiggle 1s;
+  animation: fishwiggle 1s;
+}
+@-moz-keyframes fishwiggle {
+  50% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes fishwiggle {
+  50% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fishwiggle {
+  50% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#fish1 {
+  top: 30%;
+}
+#fish2 {
+  top: 70%;
+}
+#fish3 {
+  top: 90%;
+}
+#fish4 {
+  right: -5%;
+  top: 40%;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+}
+#fish5 {
+  right: -5%;
+  top: 60%;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+}
+/* BUBBLES */
+.bubble {
+  position: absolute;
+  bottom: -11%;
+  transition: all 5s;
+  visibility: visible;
+  z-index: 1;
+  -webkit-animation: floatup 10s ease-out infinite;
+  -moz-animation: floatup 10s ease-out infinite;
+  animation: floatup 10s ease-out infinite;
+}
+@-moz-keyframes floatup {
+  100% {
+    transform: translateY(-1000%);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes floatup {
+  100% {
+    transform: translateY(-1000%);
+    opacity: 0;
+  }
+}
+@keyframes floatup {
+  100% {
+    transform: translateY(-1000%);
+    opacity: 0;
+  }
+}
+#bubble1 {
+  left: 70%;
+  width: 4%;
+}
+#bubble2 {
+  left: 15%;
+  width: 2%;
+}
+#bubble3 {
+  right: 15%;
+  width: 3%;
+  animation-delay: 4s;
+}
+#bubble4 {
+  left: 5%;
+  width: 4%;
+  animation-delay: 8s;
+}
+#bubble5 {
+  left: 17%;
+  width: 4%;
+}
+#weed {
+  position: absolute;
+  bottom: 0;
+}
+/* FOOTER */
+#footer p,
+#social-links {
+  display: inline-block;
+}
+#footer p {
+  padding-left: 5%;
+}
+#social-links {
+  margin: 0.25em 5%;
+  font-size: 2em;
+  float: right;
+}
+/* MEDIA QUERY */
+@media all and (max-width: 768px) {
+  #header h1 {
+    font-size: 2.5em;
+    margin-left: 10%;
+  }
+}
+@media all and (max-width: 600px) {
+  #header h1 {
+    font-size: 2em;
+  }
+  .main-nav li {
+    font-size: 1em;
+  }
+  #logo {
+    margin-top: 2em;
+  }
+  #footer p {
+    font-size: 0.8em;
+  }
+}
+@media all and (max-width: 500px) {
+  #header h1 {
+    font-size: 1.5em;
+  }
+  #social-links {
+    font-size: 1.5em;
+  }
+}
+@media all and (max-width: 446px) {
+  #social-links {
+    margin: 0 5%;
+  }
+}
+@media all and (max-width: 392px) {
+  #header h1 {
+    font-size: 1.3em;
+    margin-left: 5%;
+  }
+  .main-nav li {
+    font-size: 0.8em;
+  }
+}

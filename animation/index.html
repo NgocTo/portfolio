@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#602020" />
+	<meta name="author" content="Ngoc To">
+	<meta name="description" content="Ngoc's portfolio site">
+	<meta name="keywords" content="HTML,CSS,JavaScript,PHP,C#,ASP.NET,Oracle,MSSQL,MySQL">
+	<title>Ngoc To - Welcome to my page!</title>
+	<link rel="icon" href="<../images/favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+<div class="wrapper">
+    <header class="container">
+        <h1 class="d-none">Ngoc To</h1>
+        <nav role="navigation" class="navbar navbar-expand-md navbar-dark">
+            <h2 class="d-none">Main Navigation</h2>
+            <a class="navbar-brand align-items-center" href="<?=ROOT_URI?>index.php">
+                <img id="logo" src="<?=ROOT_URI?>images/logo.svg" alt="logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-ellipsis-h"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end text-center hover-effect" id="main-navigation">
+                <ul class="navbar-nav hover-effect">
+                    <li class="nav-item"><a class="nav-link text-white" href="<?=ROOT_URI?>index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="<?=ROOT_URI?>coding/">Coding</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="<?=ROOT_URI?>design/">Design</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="<?=ROOT_URI?>drawing/">Drawing</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="<?=ROOT_URI?>blog/">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+	<main id="main">
+	  <div class="page-wrapper">
+	    <div id="sky-wrapper">
+	      <div id="sun"></div>
+		  <div class="cloud" id="cloud1">
+		  </div>
+		  <div class="cloud" id="cloud2">
+		  </div>
+		  <div class="cloud" id="cloud3">
+		  </div>
+		</div>
+	    <div id="ocean-wrapper">
+		  <div id="ocean"></div>
+			<div id="boat-container">
+			  <div class="sail" id="sail1"></div>
+			  <div class="sail" id="sail2"></div>
+			  <div id="column"></div>
+			  <div id="draft"></div>
+			</div>
+			<div>
+			  <div id="fish-wrapper1"><div class="fish" id="fish1"><div></div></div>
+			  </div>
+			  <div id="fish-wrapper2"><div class="fish" id="fish2"><div></div></div>
+			  </div>
+			  <div id="fish-wrapper3"><div class="fish" id="fish3"><div></div></div>
+			  </div>
+			  <div id="fish-wrapper4"><div class="fish" id="fish4"><div></div></div>
+			  </div>
+			  <div id="fish-wrapper5"><div class="fish" id="fish5"><div></div></div>
+			  </div>
+			</div>
+		  <img class="bubble" id="bubble1" src="images/bubble1.png" alt="bubble"/>
+		  <img class="bubble" id="bubble2" src="images/bubble2.png" alt="bubble"/>
+		  <img class="bubble" id="bubble3" src="images/bubble2.png" alt="bubble"/>
+		  <img class="bubble" id="bubble4" src="images/bubble1.png" alt="bubble"/>
+		  <img class="bubble" id="bubble5" src="images/bubble2.png" alt="bubble"/>
+		  <img id="weed" src="images/weed.svg" alt="seaweed"/>
+		</div>  
+	  </div>
+	</main>
+<div class="container-fluid wrapper">
+    <footer class="container">
+        <div class="text-white text-center">
+            <div>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link text-white" href="https://github.com/NgocTo"><i class="fab fa-github-square" aria-hidden="true"></i></a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="https://www.facebook.com/bao.ngoc.1308"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="https://www.linkedin.com/in/ngoc-to"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <p class="text-small m-0 pb-2">© Copyright NgocTo, 2018. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+  </body>
+</html>
