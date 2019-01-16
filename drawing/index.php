@@ -10,9 +10,27 @@ include_once "../header.php";
 
     <section class="container drawings">
         <div class="text-center bg-grey position-relative">
+            <a href="<?=ROOT_URI?>drawing/9.php">
+                <img class="img-fluid rounded" src="<?=ROOT_URI?>images/ak-06-share.jpg" alt="Art for Christmas"/>
+                <h3 class="position-absolute drawings-heading px-1">Christmas</h3>
+            </a>
+        </div>
+        <div class="text-center bg-grey position-relative">
+            <a href="<?=ROOT_URI?>drawing/9.php">
+                <img class="img-fluid rounded" src="<?=ROOT_URI?>images/ling-web.png" alt="Yuezheng Ling Fanart"/>
+                <h3 class="position-absolute drawings-heading px-1">Yuezheng Ling Fanart</h3>
+            </a>
+        </div>
+        <div class="text-center bg-grey position-relative">
+            <a href="<?=ROOT_URI?>drawing/8.php">
+                <img class="img-fluid rounded" src="<?=ROOT_URI?>images/as-web.jpg" alt="Amaterasu System Collab Art"/>
+                <h3 class="position-absolute drawings-heading px-1">Amaterasu System Collab Art</h3>
+            </a>
+        </div>
+        <div class="text-center bg-grey position-relative">
             <a href="<?=ROOT_URI?>drawing/7.php">
                 <img class="img-fluid rounded" src="<?=ROOT_URI?>images/FREYJAsys-web.jpg" alt="Freyja.SYS Art Cover"/>
-                <h3 class="position-absolute drawings-heading px-1">Freyja.SYS Art Cover</h3>
+                <h3 class="position-absolute drawings-heading px-1">Freyja.SYS Collab Art Cover</h3>
             </a>
         </div>
         <div class="text-center bg-grey position-relative">

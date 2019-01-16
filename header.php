@@ -40,7 +40,6 @@
                     <li class="nav-item"><a class="nav-link text-white" href="<?=ROOT_URI?>index.php/#coding">Coding</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="<?=ROOT_URI?>index.php/#design">Design</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="<?=ROOT_URI?>index.php/#drawing">Drawing</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="<?=ROOT_URI?>blog/">Blog</a></li>
                 </ul>
             </div>
         </nav>

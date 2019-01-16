@@ -36,16 +36,10 @@ include_once '../header.php';
             </div>
             <div class=" mt-5">
                 <h4 class="text-center text-wide font-weight-bold">Details</h4>
-                <p>List of features for the hospital project: Patient portal (registration and lab result), doctor list, career opportunities, donation, online consultation form, survey, testimonial, frequently asked questions.</p>
+                <p>This application aims to improve existing hospital website based on user research and user experience.</p>
+                <p>Features: Patient portal (registration and lab result), doctor list, career opportunities, donation, online consultation form, survey, testimonial, frequently asked questions.</p>
                 <p>My role: Developer</p>
-                <p>
-                    The features that I built for this hospital website are Career Opportunities and Testimonial. For Career Opportunities, it helps the hospital to recruit potential staff just by having the job position on the website
-                    and reduce the time needed to answer phone calls. The hospital will receive applications that are from the website.
-                </p>
-                <p>
-                    It is also necessary for the hospital to have a good reputation and develop relationship with the community.
-                    That is why I chose to build Testimonial feature,
-                </p>
+                <p>Responsible Features: Career Opportunities and Testimonial</p>
             </div>
 
             <div class=" mt-5">
@@ -82,4 +76,3 @@ include_once '../header.php';
 
 <?php
 include_once '../footer.php';
-

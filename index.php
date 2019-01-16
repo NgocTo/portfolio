@@ -9,7 +9,7 @@ include_once 'header.php';
                     <img class="img-fluid" src="<?=ROOT_URI?>images/banner.jpg" alt="portrait"/>
                     <div class="position-absolute main-intro">
                         <p class="responsive-text">Hi there!</p>
-                        <p>I'm Ngoc To (Jade), a <span class="font-weight-bold">Front-End web developer</span> with Design and Art background.</p>
+                        <p>a Web Developer who has a strong passion for <span class="font-weight-bold">Front-End Development</span> and a background in Art</p>
                     </div>
                 </div>
             </div>
@@ -40,6 +40,43 @@ include_once 'header.php';
 
         <section class="container">
             <h2 class="text-center heading my-4 p-2" id="coding">My coding projects</h2>
+
+
+            <div class="py-4">
+                <div class="col-10 offset-1 rounded bg-grey py-2 red-border-y">
+                    <div class="row align-items-center m-2">
+                        <div class="col-md-7">
+                            <h3 class="py-2 text-center text-md-left">Food Saviour</h3>
+                            <p>In order to reduce food waste, the application helps the users keeping track of their grocery items and gives notifications when something is expiring.</p>
+                            <div class="text-right">
+                                <a class="button-light p-1" href="<?=ROOT_URI?>coding/food-saviour.php">Details</a>
+                                <a class="button-light p-1" href="<?=ROOT_URI?>webdev/food-saviour/">See project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="py-4">
+                <div class="col-10 offset-1 rounded bg-grey py-2 red-border-y">
+                    <div class="row align-items-center m-2">
+                        <div class="col-md-5 text-center">
+                            <a href="<?=ROOT_URI?>colorpalette/"><img class="img-fluid" src="<?=ROOT_URI?>images/color-desktop.png" alt="color palette homepage"/></a>
+                        </div>
+                        <div class="col-md-7">
+                            <h3 class="py-2 text-center text-md-left">Color Palette</h3>
+                            <p>Angular Project using API. Color Palette gives suggestion on the color combination to use on website. It uses API as the database.</p>
+                            <div class="text-right">
+                                <a class="button-light p-1" href="<?=ROOT_URI?>coding/color-palette.php">Details</a>
+                                <a class="button-light p-1" href="<?=ROOT_URI?>webdev/colorpalette/">See project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="py-4">
                 <div class="col-10 offset-1 rounded bg-grey py-2 red-border-y">
                     <div class="row align-items-center m-2">
@@ -47,8 +84,8 @@ include_once 'header.php';
                             <a href="<?=ROOT_URI?>coding/hospital.php"><img class="img-fluid" src="<?=ROOT_URI?>images/hospital-desktop.png" alt="hospital website homepage"/></a>
                         </div>
                         <div class="col-md-7">
-                            <h3 class="py-2 text-center text-md-left">Hospital Project</h3>
-                            <p>The project is based on a real hospital website. My team and I researched the needs of the hospital and what they lack. We cooperated with UX Design and built the features accordingly...</p>
+                            <h3 class="py-2 text-center text-md-left">Humber and District Hospital</h3>
+                            <p>This application aims to improve existing hospital website based on user research and user experience. The redesign of hospital website supports content management for the hospital.</p>
                             <div class="text-right">
                                 <a class="button-light p-1" href="<?=ROOT_URI?>coding/hospital.php">Details</a>
                                 <a class="button-light p-1" href="http://humberdistricthospital.azurewebsites.net">See project</a>
@@ -64,8 +101,8 @@ include_once 'header.php';
                             <a href="<?=ROOT_URI?>coding/social-network.php"><img class="img-fluid" src="<?=ROOT_URI?>images/socialnetwork.jpg" alt="social network homepage"/></a>
                         </div>
                         <div class="col-md-7">
-                            <h3 class="py-2 text-center text-md-left">Social Network Project</h3>
-                            <p>My team decided to build a social media application with cool targeted features for students. We took the inspiration from facebook, and worked together on the things that would be useful especially for students...</p>
+                            <h3 class="py-2 text-center text-md-left">Social Network for Student</h3>
+                            <p>Student Social Network application is made to help the students connect with the employer and connect to their future dream jobs. It is also a place for the employer to look for potential employee.</p>
                             <div class="text-right">
                                 <a class="button-light p-1" href="<?=ROOT_URI?>coding/social-network.php">Details</a>
                                 <a class="button-light p-1" href="http://smart-space.herokuapp.com/">See project</a>
@@ -81,11 +118,11 @@ include_once 'header.php';
                             <a href="coding/<?=ROOT_URI?>animation.php"><img class="img-fluid" src="<?=ROOT_URI?>images/animation.jpg" alt="animation homepage"/></a>
                         </div>
                         <div class="col-md-7">
-                            <h3 class="py-2 text-center text-md-left">CSS Project</h3>
-                            <p>The project mainly used pure CSS for the transition and animation effect. LESS was used for compatibility across browsers.</p>
+                            <h3 class="py-2 text-center text-md-left">CSS Animation</h3>
+                            <p>Project explores CSS and CSS animation with the help of a little JavaScript. LESS was used for browser compatibility and was auto compiled in Koala.</p>
                             <div class="text-right">
                                 <a class="button-light p-1" href="<?=ROOT_URI?>coding/animation.php">Details</a>
-                                <a class="button-light p-1" href="http://jadeto.com/animation">See project</a>
+                                <a class="button-light p-1" href="<?=ROOT_URI?>webdev/animation">See project</a>
                             </div>
                         </div>
                     </div>

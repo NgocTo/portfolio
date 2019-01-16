@@ -133,7 +133,7 @@ h2 {
     text-decoration: none !important;
 }
 .bg-grey-no-hover {
-    background-color: #f8f5ec;
+    background-color: #fff6fd;
 }
 .bg-grey {
     -webkit-transition: background-color 0.3s;
@@ -143,7 +143,7 @@ h2 {
     transition: background-color 0.3s;
 }
 .bg-grey:hover {
-     background-color: #f8f5ec;
+     background-color: #fff6fd;
 }
 
 .red-border {

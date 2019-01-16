@@ -36,18 +36,10 @@ include_once '../header.php';
             </div>
             <div class=" mt-5">
                 <h4 class="text-center text-wide font-weight-bold">Details</h4>
-                <p>
-                    My role: Lead designer
-                </p>
-                <p>
-                    The features that I built for this hospital website are Employer Profile and Job Listing and Timetable.
-                </p>
-                <p>
-                    Since this is a social network that connects the students together, our team decided to add more specific features like timetable and todo list.
-                    A profile for employer is also added so that this network help the employer connect wwith the student.
-                    It can also further the students' goal and connect with their future dream job.
-                <p>
-                </p>
+                <p>Student Social Network application is made to help the students connect with the employer and connect to their future dream jobs. It is also a place for the employer to look for potential employee.</p>
+                <p>The users can make an account and connect to others. The main features are that the users have news feed page, their own profile page, can add friends and chat to each other, make posts, comments, join groups and events. To enhance the students' experience using this application, the students can upload their resume to make themselves stand out from others, or they can manage their tasks and timetable with the built-in features.</p>
+                <p>Role in team: Lead designer<p>
+                <p>Responsible features: Employer Profile, Job Listing and Timetable.</p>
             </div>
             <div class="text-right">
                 <a class="button-light p-1" href="http://smart-space.herokuapp.com/">See project</a>
@@ -63,4 +55,3 @@ include_once '../header.php';
 
 <?php
 include_once '../footer.php';
-
