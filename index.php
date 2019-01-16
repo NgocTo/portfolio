@@ -45,6 +45,9 @@ include_once 'header.php';
             <div class="py-4">
                 <div class="col-10 offset-1 rounded bg-grey py-2 red-border-y">
                     <div class="row align-items-center m-2">
+                        <div class="col-md-5 text-center">
+                            <a href="<?=ROOT_URI?>webdev/food-saviour/"><img class="img-fluid" src="<?=ROOT_URI?>images/food-saviour-desktop.png" alt="food saviour homepage"/></a>
+                        </div>
                         <div class="col-md-7">
                             <h3 class="py-2 text-center text-md-left">Food Saviour</h3>
                             <p>In order to reduce food waste, the application helps the users keeping track of their grocery items and gives notifications when something is expiring.</p>
@@ -62,7 +65,7 @@ include_once 'header.php';
                 <div class="col-10 offset-1 rounded bg-grey py-2 red-border-y">
                     <div class="row align-items-center m-2">
                         <div class="col-md-5 text-center">
-                            <a href="<?=ROOT_URI?>colorpalette/"><img class="img-fluid" src="<?=ROOT_URI?>images/color-desktop.png" alt="color palette homepage"/></a>
+                            <a href="<?=ROOT_URI?>webdev/colorpalette/"><img class="img-fluid" src="<?=ROOT_URI?>images/color-desktop.png" alt="color palette homepage"/></a>
                         </div>
                         <div class="col-md-7">
                             <h3 class="py-2 text-center text-md-left">Color Palette</h3>
@@ -115,7 +118,7 @@ include_once 'header.php';
                 <div class="col-10 offset-1 rounded bg-grey py-3 red-border-y">
                     <div class="row align-items-center m-2">
                         <div class="col-md-5 text-center">
-                            <a href="coding/<?=ROOT_URI?>animation.php"><img class="img-fluid" src="<?=ROOT_URI?>images/animation.jpg" alt="animation homepage"/></a>
+                            <a href="coding/<?=ROOT_URI?>webdev/animation.php"><img class="img-fluid" src="<?=ROOT_URI?>images/animation.jpg" alt="animation homepage"/></a>
                         </div>
                         <div class="col-md-7">
                             <h3 class="py-2 text-center text-md-left">CSS Animation</h3>

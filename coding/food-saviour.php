@@ -10,7 +10,7 @@ include_once '../header.php';
         <div class="py-4">
             <div class="col-10 offset-1 rounded bg-grey py-2 red-border-y">
                 <div class="row align-items-start m-2 text-center">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <h4>Languages</h4>
                         <div>HTML5</div>
                         <div>CSS</div>
@@ -18,16 +18,10 @@ include_once '../header.php';
                         <div>PHP</div>
                         <div>MySQL</div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <h4>Technology</h4>
-                        <div>PHP with MVC</div>
-                        <div>jQuery</div>
                         <div>Bootstrap 3</div>
                         <div>Font Awesome</div>
-                    </div>
-                    <div class="col-md-4">
-                        <h4>Software</h4>
-                        <div>PHP Storm</div>
                     </div>
                 </div>
             </div>
