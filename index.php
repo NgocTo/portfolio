@@ -9,7 +9,7 @@ include_once 'header.php';
                     <img class="img-fluid" src="<?=ROOT_URI?>images/banner.jpg" alt="portrait"/>
                     <div class="position-absolute main-intro">
                         <p class="responsive-text">Hi there!</p>
-                        <p>a Web Developer who has a strong passion for <span class="font-weight-bold">Front-End Development</span> and a background in Art</p>
+                        <p>Ngoc (Jade) is a Web Developer who has a strong passion for <span class="font-weight-bold">Front-End Development</span>.</p>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,9 @@ include_once 'header.php';
                         <span class="mx-4 text-hover">JavaScript</span>
                     </p>
                     <p>
+                        <span class="mx-4 text-hover">Laravel</span>
+                        <span class="mx-4 text-hover">React/Angular</span>
                         <span class="mx-4 text-hover">Bootstrap</span>
-                        <span class="mx-4 text-hover">SASS</span>
                     </p>
                     <p>
                         <span class="mx-4 text-hover">PHP</span>
