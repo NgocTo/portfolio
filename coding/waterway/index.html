@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Ngoc To</title>
+
+<!-- Welcome to ZIM at https://zimjs.com - Code Creativity!              	        -->
+<!-- ZIM runs on the HTML Canvas powered by JavaScript and CreateJS https://createjs.com -->
+<!-- Founded by Inventor Dan Zen - http://danzen.com - Canadian New Media Award Winner 	-->
+<!-- ZIM is free to use. You can donate to help improve ZIM at http://zimjs.com/donate 	-->
+
+<script src="https://d309knd7es5f10.cloudfront.net/createjs_1.1_min.js"></script>
+<script src="https://d309knd7es5f10.cloudfront.net/zim_9.3.0.js"></script>
+<!-- use zimjs.com/distill for minified individual functions! -->
+
+<script>
+
+// SCALING OPTIONS
+// scaling can have values as follows with full being the default
+// "fit"	sets canvas and stage to dimensions and scales to fit inside window size
+// "outside"	sets canvas and stage to dimensions and scales to fit outside window size
+// "full"	sets stage to window size with no scaling
+// "tagID"	add canvas to HTML tag of ID - set to dimensions if provided - no scaling
+
+var scaling = "fit"; // this will resize to fit inside the screen dimensions
+var width = 1024;
+var height = 768;
+var color = "#8bb54a"; // ZIM colors like green, blue, pink, faint, clear, etc. available globally
+var outerColor = dark; // any HTML colors like "violet", "#333", etc. fine to use
+
+// Flat road tiles by Kenney Vleugels (www.kenney.nl)
+// <a href="https://www.freepik.com/free-vector/small-pool-in-the-park_1623761.htm">Designed by Brgfx</a>
+var assets = ["Splashing_Around.mp3", "sound-effect.m4a", "terrainTile3.png", "terrainTile6.png", "waterTile1.png", "waterTile2.png", "waterTile12.png", "waterTile13.png", "waterTile5.png", "waterTile40.png", "pond.png", "pond-after.png", "fish.png"];
+var path = "assets/"
+var frame = new Frame(scaling, width, height, color, outerColor, assets, path, new Waiter());
+frame.on("ready", function() {
+    zog("ready from ZIM Frame"); // logs in console (F12 - choose console)
+
+    var stage = frame.stage;
+    var stageW = frame.width;
+    var stageH = frame.height;
+
+    var tile; var pond; var pondAfter; var path; var fish; var music; var splash;
+    var btn; var resultLabel;
+    var title;
+    // Make pages
+    var main = new Container(stageW, stageH);
+    var result = new Container(stageW, stageH);
+
+	var pages = new Pages({
+	   holder: stage,
+	   pages: [
+	      // swipe:["right", "left", "down", "up"]
+	      {page: main, swipe: [null,result,null,null]},
+	      {page: result, swipe: [main,null,null,null]},
+	   ],
+	   transition: "slide",
+	   speed: 500
+	}).addTo(stage);
+
+    // makeStage();
+    makeIntro();
+    function makeIntro() {
+        // Make game components
+        title = new Label({
+            text: "CONNECT THE WATERWAY",
+            color: white,
+            backgroundColor: green,
+            paddingHorizontal: 500,
+            align: "center"
+        })
+            .center()
+            .mov(null, -320)
+            .animate({
+                props: {y: -200},
+                time: 1000,
+                from: true,
+                call: function() {
+                    pond.pauseAnimate(false);
+                    tile.pauseAnimate(false);
+                    btn.pauseAnimate(false);
+                }
+            });
+        makeStage();
+        frame.asset("Splashing_Around.mp3").play({loop: true, volume:.5});
+    }
+    function makeStage() {
+        // MAIN
+        var rtn = [90, 180, 270];
+        var grass = frame.asset("terrainTile3.png").centerReg({add: false}).rot(rtn[rand(rtn.length-1)]);
+        var water = frame.asset("terrainTile6.png").centerReg({add: false}).rot(rtn[rand(rtn.length-1)]);
+        var topLeft = frame.asset("waterTile1.png").centerReg({add: false}).rot(rtn[rand(rtn.length-1)]);
+        var topRight = frame.asset("waterTile2.png").centerReg({add: false}).rot(rtn[rand(rtn.length-1)]);
+        var botLeft = frame.asset("waterTile12.png").centerReg({add: false}).rot(rtn[rand(rtn.length-1)]);
+        var botRight = frame.asset("waterTile13.png").centerReg({add: false}).rot(rtn[rand(rtn.length-1)]);
+        var horizontal = frame.asset("waterTile5.png").centerReg({add: false}).rot(rtn[rand(rtn.length-1)]);
+        var verticle = frame.asset("waterTile40.png").centerReg({add: false}).rot(rtn[rand(rtn.length-1)]);
+        tile = new Tile({
+            obj: series(
+                grass, topLeft, water, topLeft, botRight, water, topLeft, horizontal.rot(0),
+                topRight.rot(0), botLeft, horizontal, verticle, botRight, topLeft, horizontal, horizontal.rot(0),
+                verticle, topLeft, water, verticle, horizontal, verticle, horizontal, horizontal.rot(0),
+                verticle, verticle, verticle, topLeft, horizontal, botRight, verticle, horizontal.rot(0),
+                botLeft, botRight, botLeft, water, horizontal, botRight, botLeft, horizontal.rot(0)
+                ),
+            cols: 8,
+            rows: 5,
+        })
+            .sca(1.6)
+            .center(main)
+            .pos(0, null, true)
+            .alp(0)
+            .animate({
+                props: {alpha: 1},
+                time:1000,
+                startPaused: true
+            });
+        tile.on("click", function(e) {
+            var currentRotation = e.target.rotation;
+            if (e.target.x !== 480 && e.target.parent.getChildIndex(e.target) !== 8) {
+                e.target.rot(currentRotation + 90);
+            }
+            zog(e.target.parent.getChildIndex(e.target));
+        })
+
+        pond = frame.asset("pond.png")
+            .centerReg(main, 0)
+            .sca(0.5)
+            .pos(0)
+            .alp(0)
+            .animate({
+                props: {alpha: 1},
+                time:1000,
+                startPaused: true
+            });
+        pondAfter = frame.asset("pond-after.png")
+            .sca(0.42)
+            .centerReg(result)
+            .pos(0, null);
+        btn = new Button({
+            label: "RUN",
+            backgroundColor: grey,
+            rollBackgroundColor: blue,
+            corner: 15,
+            shadowColor: -1
+        })
+            .center(main)
+            .alp(0)
+            .mov(null, 320)
+            
+            .animate({
+                props: {alpha: 0.8},
+                time: 500,
+                startPaused: true
+            });
+        btn.on("click", checkPath);
+        var bubble = new Emitter({
+            obj:new Circle(20,white,blue).alp(0.1),
+            interval:300,
+            life:15000,
+            decayTime:1000,
+            horizontal: true,
+            gravity:0.5,
+            force:0.5,
+        })
+            .centerReg(stage)
+            .pos(null, 0)
+            .sca(2);
+            
+        // splash = new Emitter({
+        //     obj: {type:"shape", s:white, ss:1},
+        //     interval:20,
+        //     life:1400,
+        //     decayTime:500,
+        //     decayStart:500,
+        //     gravity:5,
+        //     force:{min:2, max:4},
+		//     startPaused:true
+        // })
+        //     .alp(0.5)
+        //     .centerReg(stage)
+        //     .mov(null, 320)
+        //     .bot();
+        var data = [
+            [-36,4.8,0,0,-82.8,0.8,82.8,-0.8],
+            [53.7,70.3,0,0,0,-39.3,0,39.3],
+            [64.6,299.6,0,0,-20.4,-16,20.4,16],
+            [142.8,302.1,0,0,-16.4,13.6,16.4,-13.6],
+            [160.1,115.3,0,0,-24.4,20,24.4,-20],
+            [249.2,116.8,0,0,-18.4,-15.2,18.4,15.2],
+            [265.2,301.1,0,0,-20.1,-21.6,20.1,21.6],
+            [355,305.1,0,0,-17.6,16,17.6,-16],
+            [375.8,217.7,0,0,-24,8.8,24,-8.8],
+            [551.3,210.5,0,0,-32,12.8,32,-12.8],
+            [580.1,9.4,0,0,-32.9,6.4,32.9,-6.4],
+            [875.9,6.5,0,0,-30.8,0,30.8,0]
+        ];
+        path = new Squiggle({
+            points: data,
+            thickness:1,
+            color: "#8BB54A",
+            interactive: false
+        }).alp(0.1).loc(pond).mov(100, -110).bot();
+
+        var sprite = frame.asset("fish.png");
+        fish = new Sprite({
+            image:sprite,
+            cols:1,
+            rows:10
+        })
+            .sca(0.18)
+            .alp(0)
+            .animate({
+                props: {alpha: 0.7},
+                time: 500,
+                startPaused: true,
+                call: function() {
+                    fish.animate({
+                        props: {path: path},
+                        time: 15000,
+                    })
+                }
+            });
+        fish.run({time:1000, loop:true});
+    }
+
+    function checkPath() {
+        var flag = 0;
+        var tileChildren = tile.children;
+        // var correctTileIndex = [16, 24, 32, 33, 25, 17, 19, 27, 28, 29, 21, 13, 14];
+        var correctIndexes = [
+            {"rot180": [16, 24, 25, 28, 21, 14]},
+            {"rot360": [32, 33, 34, 27, 29, 13]}
+        ];
+        loop (tileChildren, function(tileChild, i) {
+            loop (correctIndexes[0].rot180, function(correctIndex) {
+                if (i == correctIndex) {
+                    if (Number.isInteger(tileChild.rotation/180)) {
+                        flag++;
+                    }
+                }
+            });
+            loop (correctIndexes[1].rot360, function(correctIndex) {
+                if (i == correctIndex) {
+                    if (Number.isInteger(tileChild.rotation/360)) {
+                        flag++;
+                    }
+                }
+            });
+        });
+        if (flag === 12) {
+            fish.centerReg(main)
+                .loc(path.pointControls[0])
+                .run({time:500, loop:true})
+                .pauseAnimate(false);
+            frame.asset("sound-effect.m4a").play({loop: true, volume:.2});
+            makeWinPage();
+            timeout(14000, function() {
+                pages.go(result, "right");
+                fish.removeFrom();
+            })
+        } else {
+            makeResultPage();
+            pages.go(result, "right");
+        }
+    }
+    function makeResultPage() {
+        zog("try again");
+        resultLabel = new Label({
+            text: "The water did not connect to the pond. \nTry again!",
+            color: white,
+            align: "center",
+            corner: 10,
+            backgroundColor: red,
+            padding: 15
+        }).center(result);
+        timeout(1500, function() {
+            pages.go(main, "left");
+            pondAfter.removeFrom();
+            resultLabel.removeFrom();
+        })
+    }
+    function makeWinPage() {
+        zog("win");
+        var data2 = [
+            [-36,4.8,0,0,-62.4,-0.2,62.4,0.2],
+            [56.6,53.8,0,0,0,-39.3,0,39.3],
+            [-15.1,113,0,0,71,0.5,-71,-0.5],
+            [-16.6,298.2,0,0,-63.1,0,63.1,0],
+            [153.3,297.1,0,0,-54.5,0.6,54.5,-0.6],
+            [198.6,-81.5,0,0,-71.8,-0.6,71.8,0.6],
+            [556.9,-80,0,0,-44.4,-0.2,44.4,0.2],
+            [558.2,0.8,0,0,42.7,-0.5,-42.7,0.5],
+            [474,30.1,0,0,0.3,-34,-0.3,34],
+            [449.3,294.1,0,0,32.2,-0.8,-32.2,0.8],
+            [347.7,295.2,0,0,42,-0.4,-42,0.4],
+            [316.3,148.1,0,0,0,39.9,0,-39.9],
+            [293.6,61.9,0,0,29.2,0,-29.2,0]
+        ];
+        resultPath = new Squiggle({
+            points: data2,
+            thickness:1,
+            color: "#9CD5E2",
+            showControls: false
+        }).addTo(result).mov(190, 270);
+        var sprite2 = frame.asset("fish.png").clone();
+        var resultFish  = new Sprite({
+            image:sprite2,
+            cols:1,
+            rows:10
+        })
+            .sca(0.18)
+            .alp(0.7)
+            .centerReg(result)
+            .loc(resultPath.pointControls[0])
+            .animate({
+                props: {path: resultPath},
+                time: 30000,
+                ease: "linear",
+                rewind: true,
+                loop: true,
+            });
+        resultFish.run({time:1000, loop:true});
+        resultPath.on("mouseover", function(){
+            resultPath.color = dark;
+            resultPath.showControls(true);
+        });
+        resultPath.on("mouseout", function() {
+            resultPath.color = "#9CD5E2";
+            resultPath.showControls(false);
+        })
+        title.text = "CONGRATULATIONS!";
+        title.setColorRange(white, yellow);
+        title.wiggle("colorRange", .5, .2, .5, 200, 500);
+
+    }
+
+
+
+    // frame.on("keydown", function (e) {
+    //     zog(e.keyCode);
+    //     if (e.keyCode == 82) {
+    //         resultPath.recordPoints(true);
+    //     }
+    // });
+    // new TransformManager(resultPath);
+    stage.update(); // this is needed to show any changes
+
+}); // end of ready
+
+</script>
+
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+</head>
+
+<body>
+<!-- canvas with id="myCanvas" is made by zim Frame -->
+</body>
+</html>
