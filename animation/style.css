@@ -11,12 +11,11 @@
 /* MIXINS */
 /* DESKTOP */
 /* GENERAL */
-html {
+/* html {
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  background-color: #392033;
   font-family: 'Inconsolata', monospace;
   color: #ffc1a0;
 }
@@ -24,17 +23,17 @@ body {
 *:before,
 *:after {
   box-sizing: inherit;
-}
+} */
 .page-wrapper {
   max-width: 1024px;
   margin: 0 auto;
   position: relative;
 }
-.hidden {
+/* .hidden {
   position: absolute;
   left: -10000px;
-}
-a {
+} */
+/* a {
   text-decoration: none;
   color: #ffc1a0;
 }
@@ -48,9 +47,9 @@ ul {
 li {
   display: inline-block;
   list-style: none;
-}
+} */
 /* HEADER */
-.main-nav ul {
+/* .main-nav ul {
   position: absolute;
   right: 0;
 }
@@ -80,7 +79,7 @@ li {
 #header h1 span {
   color: #cff4f3;
   font-weight: normal;
-}
+} */
 /* MAIN */
 #main .page-wrapper {
   border: 2px solid #ff8967;
@@ -611,7 +610,7 @@ li {
   float: right;
 }
 /* MEDIA QUERY */
-@media all and (max-width: 768px) {
+/* @media all and (max-width: 768px) {
   #header h1 {
     font-size: 2.5em;
     margin-left: 10%;
@@ -652,4 +651,4 @@ li {
   .main-nav li {
     font-size: 0.8em;
   }
-}
+} */

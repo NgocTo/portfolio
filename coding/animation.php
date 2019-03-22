@@ -7,7 +7,7 @@ include_once '../header.php';
         <h2 class="text-center heading my-4 p-2">CSS Animation Project</h2>
         <div class="justify-content-center row">
             <div class="col-md-6">
-                <a href="http://jadeto.com/animation" target="_blank"><img class="img-fluid" src="<?=ROOT_URI?>images/animation-responsive.png" alt="animation project across devices"/></a>
+                <a href="<?=ROOT_URI?>animation" target="_blank"><img class="img-fluid" src="<?=ROOT_URI?>images/food-saviour-desktop.png" alt="food saviour project homepage"/></a>
             </div>
         </div>
         <div class="py-4">
@@ -40,7 +40,7 @@ include_once '../header.php';
                 </p>
             </div>
             <div class="text-right">
-                <a class="button-light p-1" href="http://jadeto.com/animation">See project</a>
+                <a class="button-light p-1" href="<?=ROOT_URI?>animation">See project</a>
             </div>
         </div>
     </section>

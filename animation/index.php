@@ -6,6 +6,7 @@ include_once '../header.php';
 
 
 <main id="main">
+    <p class="text-center lead mt-2">Try clicking around the sky or hovering over the clouds!</p>
     <div class="page-wrapper">
         <div id="sky-wrapper">
             <div id="sun"></div>

@@ -6,9 +6,9 @@ include_once '../header.php';
     <section class="container">
         <h2 class="text-center heading my-4 p-2">Social Network Project</h2>
         <div class="justify-content-center row">
-<!--            <div class="col-md-6">-->
-<!--                <a href="http://smart-space.herokuapp.com/" target="_blank"><img class="img-fluid" src="--><?//=ROOT_URI?><!--images/social-network-responsive.png" alt="hospital website cross devices"/></a>-->
-<!--            </div>-->
+           <div class="col-md-6">-->
+               <a href="http://smart-space.herokuapp.com/" target="_blank"><img class="img-fluid" src="<?=ROOT_URI?>images/socialnetwork.jpg" alt="smart space social network homepage"/></a>
+            </div>
         </div>
         <div class="py-4">
             <div class="col-10 offset-1 rounded bg-grey py-2 red-border-y">
